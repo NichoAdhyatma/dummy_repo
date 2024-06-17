@@ -35,8 +35,8 @@
                 <!-- Nomor Handphone -->
                 <div class="mb-3">
                     <x-input-label for="inputNomorHp" :value="__('Nomor Handphone (WhatsApp)')" />
-                    <x-text-input id="inputNomorHp" class="form-control" type="text" name="phone"
-                        :value="old('nomor_hp')" required />
+                    <x-text-input id="inputNomorHp" class="form-control" type="text" name="phone" :value="old('nomor_hp')"
+                        required />
                     <x-input-error :messages="$errors->get('nomor_hp')" class="mt-2" />
                 </div>
 

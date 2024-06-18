@@ -21,7 +21,7 @@
                                 UNAIR</p>
 
                             @php
-                                if (Auth::user()->role_id == config('constants.ROLE_SANTRI')) {
+                                if (Auth::check() && Auth::user()->role_id == config('constants.ROLE_SANTRI')) {
                                     if (count(Auth::user()->santri->verifiedSetoran) > 0) {
                                         $verifiedSetoranData = Auth::user()->santri->verifiedSetoran[
                                             count(Auth::user()->santri->verifiedSetoran) - 1

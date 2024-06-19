@@ -64,7 +64,7 @@
             </div>
 
             @if ($ujianVerified)
-                @if ($ujianVerified->penguji_verified === 0 || $ujianVerified->panitia_verified === 0)
+                @if ($ujianVerified->penguji_verified === '0' || $ujianVerified->panitia_verified === '0')
                     @if ($ujianVerified->penguji_done != null || $ujianVerified->panitia_done != null)
                         <div class="bg-yellow-100 p-4 rounded-lg my-4">
                             <p class="text-2xl font-bold text-yellow-700">Pemberitahuan</p>
@@ -120,8 +120,8 @@
                         </tbody>
                     </table>
                 @elseif (
-                    ($ujianVerified->penguji_verified === 1 && is_null($ujianVerified->panitia_verified)) ||
-                        (is_null($ujianVerified->penguji_verified) && $ujianVerified->panitia_verified === 1) ||
+                    ($ujianVerified->penguji_verified === '1' && is_null($ujianVerified->panitia_verified)) ||
+                        (is_null($ujianVerified->penguji_verified) && $ujianVerified->panitia_verified === '1') ||
                         (is_null($ujianVerified->penguji_verified) && is_null($ujianVerified->panitia_verified)))
                     <div id="process-ujian" class="bg-green-100 p-4 rounded-lg">
                         <p class="text-2xl font-bold text-green-700">Menunggu Status Pendaftaran <i
@@ -173,7 +173,7 @@
                             @endforeach
                         </tbody>
                     </table>
-                @elseif ($ujianVerified->penguji_verified === 1 && $ujianVerified->panitia_verified === 1)
+                @elseif ($ujianVerified->penguji_verified === '1' && $ujianVerified->panitia_verified === '1')
                     @if (end($activeStepper) != 'Pengumuman')
                         <div class="border-[2px] rounded p-4 mb-4 flex gap-3 items-center">
                             <div class="bg-[#075F7C33] rounded"><i class="p-3 fa-solid fa-bullhorn text-xl"></i></div>

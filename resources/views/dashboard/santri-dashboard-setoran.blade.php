@@ -69,8 +69,8 @@
                                 di sini</a>
                     </div>
                 @elseif (
-                    ($santriVerified->penguji_verified === 1 && is_null($santriVerified->panitia_verified)) ||
-                        (is_null($santriVerified->penguji_verified) && $santriVerified->panitia_verified === 1) ||
+                    ($santriVerified->penguji_verified === '1' && is_null($santriVerified->panitia_verified)) ||
+                        (is_null($santriVerified->penguji_verified) && $santriVerified->panitia_verified === '1') ||
                         (is_null($santriVerified->penguji_verified) && is_null($santriVerified->panitia_verified)))
                     <div id="process-setoran" class="bg-green-100 p-4 rounded-lg">
                         <p class="text-2xl font-bold text-green-700">Menunggu Status Pendaftaran <i
@@ -78,7 +78,7 @@
                         <p class="text-gray-800">Kamu sudah mendaftar program setoran tahfidz, mohon menunggu proses
                             seleksi.
                     </div>
-                @elseif ($santriVerified->penguji_verified === 1 && $santriVerified->panitia_verified === 1)
+                @elseif ($santriVerified->penguji_verified === '1' && $santriVerified->panitia_verified === '1')
                     <div id="success-setoran" class="border-[2px] rounded p-4 mb-4 flex gap-3 items-center">
                         <div class="bg-[#075F7C33] rounded"><i class="p-3 fa-solid fa-bullhorn text-xl"></i></div>
                         <p class="text-xl font-medium mb-0">

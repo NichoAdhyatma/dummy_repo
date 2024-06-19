@@ -41,18 +41,18 @@
                                 @if (count(Auth::user()->santri->verifiedSetoran) > 0)
                                     @if (Auth::user()->santri->verifiedSetoran)
 
-                                        @if ($verifiedSetoranData->penguji_verified === 0 || $verifiedSetoranData->panitia_verified === 0)
+                                        @if ($verifiedSetoranData->penguji_verified === '0' || $verifiedSetoranData->panitia_verified === '0')
                                             <button class="btn" data-bs-toggle="modal"
                                                 data-bs-target="#modalConfirm">
                                                 Daftar
                                             </button>
                                         @elseif (
-                                            ($verifiedSetoranData->penguji_verified === 1 && is_null($verifiedSetoranData->panitia_verified)) ||
-                                                (is_null($verifiedSetoranData->penguji_verified) && $verifiedSetoranData->panitia_verified === 1) ||
+                                            ($verifiedSetoranData->penguji_verified === '1' && is_null($verifiedSetoranData->panitia_verified)) ||
+                                                (is_null($verifiedSetoranData->penguji_verified) && $verifiedSetoranData->panitia_verified === '1') ||
                                                 (is_null($verifiedSetoranData->penguji_verified) && is_null($verifiedSetoranData->panitia_verified)))
                                             <div class="text-primary-app font-semibold"><span>Proses seleksi</span> <i
                                                     class="fa-regular fa-hourglass-half ml-1"></i> </div>
-                                        @elseif ($verifiedSetoranData->penguji_verified === 1 && $verifiedSetoranData->panitia_verified === 1)
+                                        @elseif ($verifiedSetoranData->penguji_verified === '1' && $verifiedSetoranData->panitia_verified === '1')
                                             <div class="text-green-500 font-semibold"><span>Sudah daftar</span> <i
                                                     class="fa-solid fa-circle-check"></i></div>
                                         @endif
@@ -115,18 +115,18 @@
                                 @if (count(Auth::user()->santri->verifiedUjian) > 0)
 
                                     @if (Auth::user()->santri->verifiedUjian)
-                                        @if ($verifiedUjian->penguji_verified === 0 || $verifiedUjian->panitia_verified === 0)
+                                        @if ($verifiedUjian->penguji_verified === '0' || $verifiedUjian->panitia_verified === '0')
                                             <button class="btn" data-bs-toggle="modal"
                                                 data-bs-target="#modalConfirmUjian">
                                                 Daftar
                                             </button>
                                         @elseif (
-                                            ($verifiedUjian->penguji_verified === 1 && is_null($verifiedUjian->panitia_verified)) ||
-                                                (is_null($verifiedUjian->penguji_verified) && $verifiedUjian->panitia_verified === 1) ||
+                                            ($verifiedUjian->penguji_verified === '1' && is_null($verifiedUjian->panitia_verified)) ||
+                                                (is_null($verifiedUjian->penguji_verified) && $verifiedUjian->panitia_verified === '1') ||
                                                 (is_null($verifiedUjian->penguji_verified) && is_null($verifiedUjian->panitia_verified)))
                                             <div class="text-primary-app font-semibold"><span>Proses seleksi</span> <i
                                                     class="fa-regular fa-hourglass-half ml-1"></i> </div>
-                                        @elseif ($verifiedUjian->penguji_verified === 1 && $verifiedUjian->panitia_verified === 1)
+                                        @elseif ($verifiedUjian->penguji_verified === '1' && $verifiedUjian->panitia_verified === '1')
                                             <div class="text-green-500 font-semibold"><span>Sudah daftar</span> <i
                                                     class="fa-solid fa-circle-check"></i></div>
                                         @endif

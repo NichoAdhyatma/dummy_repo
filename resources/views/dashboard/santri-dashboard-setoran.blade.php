@@ -61,7 +61,7 @@
 
 
             @if ($santriVerified)
-                @if ($santriVerified->penguji_verified === 0 || $santriVerified->panitia_verified === 0)
+                @if ($santriVerified->penguji_verified === '0' || $santriVerified->panitia_verified === '0')
                     <div class="bg-red-100 p-4 rounded-lg my-4">
                         <p class="text-2xl font-bold text-red-700">Pemberitahuan</p>
                         <p class="text-red-800">Pendaftaran program tahfidz setoran di tolak, kamu bisa mendaftar lagi <a

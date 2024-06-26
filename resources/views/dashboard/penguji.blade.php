@@ -109,7 +109,8 @@
                             </td>
                             <td class="text-center"><a href={{ route('dashboard.penguji.setoran.update', $s->id) }}
                                     class="btn btn-sm" type="button"><i class="bi bi-pencil-fill"></i></a>
-                                <form action={{ route('setoran.destroy', $s->id) }} method="POST">
+                                <form action={{ route('setoran.destroy', $s->id) }} method="POST" class="delete-form"
+                                    data-confirm="Are you sure you want to delete this?">
 
                                     @csrf
                                     @method('delete')
@@ -144,17 +145,21 @@
                             <td>{{ is_null($j->catatan) ? 'Belum ada catatan' : $j->catatan }}</td>
 
 
-                            <td class="text-center"><a href={{ route('dashboard.penguji.ujian.update', $j->id) }}
-                                    class="btn btn-sm" type="button"><i class="bi bi-pencil-fill"></i></a>
-                                <form action={{ route('ujian.destroy', $j->id) }} method="POST">
-
+                            <td class="text-center">
+                                <a href="{{ route('dashboard.penguji.ujian.update', $j->id) }}" class="btn btn-sm"
+                                    type="button">
+                                    <i class="bi bi-pencil-fill"></i>
+                                </a>
+                                <form action="{{ route('ujian.destroy', $j->id) }}" method="POST"
+                                    class="delete-form" data-confirm="Are you sure you want to delete this?">
                                     @csrf
                                     @method('delete')
-
-                                    <button class="btn btn-sm btn-delete" type="submit"><i
-                                            class="bi bi-trash"></i></button>
+                                    <button class="btn btn-sm btn-delete" type="submit">
+                                        <i class="bi bi-trash"></i>
+                                    </button>
                                 </form>
                             </td>
+
                         </tr>
                     @endforeach
                 </tbody>

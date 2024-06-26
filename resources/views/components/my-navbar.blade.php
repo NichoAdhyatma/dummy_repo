@@ -115,7 +115,7 @@
                     @else
                         <li><button data-bs-toggle="modal" data-bs-target="#modalRegister"
                                 class="register scrollto">Register</button></li>
-                        <li><button class="login" data-bs-toggle="modal" data-bs-target="#modalLogin">Login</button>
+                        <li><a href={{route('login.store')}}><button class="login">Login</button></a>
                         </li>
                     @endif
                 </ul>

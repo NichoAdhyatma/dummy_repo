@@ -101,30 +101,7 @@
                     </div>
 
 
-                    <div class="row mb-3">
-                        <div class="col-2 my-auto">
-                            <label for="inputStatus" class="form-label mb-0">Status</label>
-                        </div>
-                        <div class="col-10">
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="status" id="statusLanjut"
-                                    value="1" {{ old('status') == '1' ? 'checked' : '' }} required>
-                                <label class="form-check-label" for="statusLanjut">
-                                    Lanjut
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="status" id="statusMenunggu"
-                                    value="0" {{ old('status') == '0' ? 'checked' : '' }} required>
-                                <label class="form-check-label" for="statusMenunggu">
-                                    Ulang
-                                </label>
-                            </div>
-                            @error('status')
-                                <div class="text-danger mt-2">{{ $message }}</div>
-                            @enderror
-                        </div>
-                    </div>
+
 
 
 
@@ -149,9 +126,9 @@
                             <div class="d-flex flex-wrap gap-3">
                                 <div>
 
-                                    <input placeholder="Kelancaran" type="number"
-                                        class="form-control form-control-sm" id="inputNilaiKelancaran"
-                                        name="nilai_kelancaran" value="{{ old('nilai_kelancaran') }}" required>
+                                    <input placeholder="Kelancaran" type="number" class="form-control form-control-sm"
+                                        id="inputNilaiKelancaran" name="nilai_kelancaran"
+                                        value="{{ old('nilai_kelancaran') }}" required>
                                     @error('nilai_kelancaran')
                                         <div class="text-danger mt-2">{{ $message }}</div>
                                     @enderror
@@ -159,8 +136,8 @@
                                 <div>
 
                                     <input placeholder="Makhraj" type="number" class="form-control form-control-sm"
-                                        id="inputNilaiMakhraj" name="nilai_makhraj"
-                                        value="{{ old('nilai_makhraj') }}" required>
+                                        id="inputNilaiMakhraj" name="nilai_makhraj" value="{{ old('nilai_makhraj') }}"
+                                        required>
                                     @error('nilai_makhraj')
                                         <div class="text-danger mt-2">{{ $message }}</div>
                                     @enderror
@@ -168,8 +145,7 @@
                                 <div>
 
                                     <input placeholder="Lagu" type="number" class="form-control form-control-sm"
-                                        id="inputNilaiLagu" name="nilai_lagu" value="{{ old('nilai_lagu') }}"
-                                        required>
+                                        id="inputNilaiLagu" name="nilai_lagu" value="{{ old('nilai_lagu') }}" required>
                                     @error('nilai_lagu')
                                         <div class="text-danger mt-2">{{ $message }}</div>
                                     @enderror
@@ -184,6 +160,31 @@
                                     @enderror
                                 </div>
                             </div>
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <div class="col-2 my-auto">
+                            <label for="inputStatus" class="form-label mb-0">Status</label>
+                        </div>
+                        <div class="col-10">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="status" id="statusLanjut"
+                                    value="1" {{ old('status') == '1' ? 'checked' : '' }} required>
+                                <label class="form-check-label" for="statusLanjut">
+                                    Lanjut
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="status" id="statusMenunggu"
+                                    value="0" {{ old('status') == '0' ? 'checked' : '' }} required>
+                                <label class="form-check-label" for="statusMenunggu">
+                                    Ulang
+                                </label>
+                            </div>
+                            @error('status')
+                                <div class="text-danger mt-2">{{ $message }}</div>
+                            @enderror
                         </div>
                     </div>
 
@@ -210,5 +211,15 @@
                 itemSelectText: '',
             });
         });
+    </script>\
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get today's date in YYYY-MM-DD format
+            const today = new Date().toISOString().split('T')[0];
+            // Set the value of the date input to today's date
+            document.getElementById('inputTglSetoran').value = today;
+        });
     </script>
+
 </x-app-layout>

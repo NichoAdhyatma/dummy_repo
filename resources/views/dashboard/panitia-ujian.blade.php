@@ -95,7 +95,8 @@
 
                             <td class="text-center"><a href={{ route('dashboard.panitia.ujian.edit', $u->id) }}
                                     class="btn btn-sm" type="button"><i class="bi bi-pencil-fill"></i></a>
-                                <form action={{ route('ujian.destroy', $u->id) }} method="POST">
+                                <form action={{ route('ujian.destroy', $u->id) }} method="POST" class="delete-form"
+                                    data-confirm="Are you sure you want to delete this?">
                                     @csrf
                                     @method('delete')
 

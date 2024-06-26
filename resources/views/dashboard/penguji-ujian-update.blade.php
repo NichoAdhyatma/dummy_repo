@@ -310,7 +310,7 @@
 
                     <div class="float-end">
                         <button type="submit" class="btn btn-primary">Simpan</button>
-                        <a class="btn btn-secondary" href="{{ route('dashboard.panitia.ujian') }}">Kembali</a>
+                        <a class="btn btn-secondary" href="{{ route('penguji .ujian') }}">Kembali</a>
                     </div>
                 </form>
             </div>

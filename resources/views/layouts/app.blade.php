@@ -169,6 +169,28 @@
             document.getElementById("pendaftaranUjian").style.display = "none";
         }
     </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get all forms with the class 'delete-form'
+            const deleteForms = document.querySelectorAll('.delete-form');
+
+            deleteForms.forEach(function(form) {
+                // Add a submit event listener to each form
+                form.addEventListener('submit', function(event) {
+                    // Prevent the form from submitting immediately
+                    event.preventDefault();
+
+                    // Show the confirmation dialog
+                    const confirmationMessage = form.getAttribute('data-confirm');
+                    if (confirm(confirmationMessage)) {
+                        // If the user confirms, submit the form
+                        form.submit();
+                    }
+                });
+            });
+        });
+    </script>
+
 </body>
 
 </html>

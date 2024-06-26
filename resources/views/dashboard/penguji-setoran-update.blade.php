@@ -109,32 +109,7 @@
                         </div>
                     </div>
 
-                    <div class="row mb-3">
-                        <div class="col-2 my-auto">
-                            <label for="inputStatus" class="form-label mb-0">Status</label>
-                        </div>
-                        <div class="col-10">
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="status" id="statusLanjut"
-                                    value="1" {{ old('status', $setoran->status) == '1' ? 'checked' : '' }}
-                                    required>
-                                <label class="form-check-label" for="statusLanjut">
-                                    Lanjut
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="status" id="statusMenunggu"
-                                    value="0" {{ old('status', $setoran->status) == '0' ? 'checked' : '' }}
-                                    required>
-                                <label class="form-check-label" for="statusMenunggu">
-                                    Ulang
-                                </label>
-                            </div>
-                            @error('status')
-                                <div class="text-danger mt-2">{{ $message }}</div>
-                            @enderror
-                        </div>
-                    </div>
+
 
 
 
@@ -158,9 +133,8 @@
                         <div class="col-10">
                             <div class="d-flex flex-wrap gap-3">
                                 <div>
-                                    <input placeholder="Kelancaran" type="number"
-                                        class="form-control form-control-sm" id="inputNilaiKelancaran"
-                                        name="nilai_kelancaran"
+                                    <input placeholder="Kelancaran" type="number" class="form-control form-control-sm"
+                                        id="inputNilaiKelancaran" name="nilai_kelancaran"
                                         value="{{ old('nilai_kelancaran', $setoran->nilais[0]->pivot->nilai ?? '') }}"
                                         required>
                                     @error('nilai_kelancaran')
@@ -198,6 +172,33 @@
                                     @enderror
                                 </div>
                             </div>
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <div class="col-2 my-auto">
+                            <label for="inputStatus" class="form-label mb-0">Status</label>
+                        </div>
+                        <div class="col-10">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="status" id="statusLanjut"
+                                    value="1" {{ old('status', $setoran->status) == '1' ? 'checked' : '' }}
+                                    required>
+                                <label class="form-check-label" for="statusLanjut">
+                                    Lanjut
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="status" id="statusMenunggu"
+                                    value="0" {{ old('status', $setoran->status) == '0' ? 'checked' : '' }}
+                                    required>
+                                <label class="form-check-label" for="statusMenunggu">
+                                    Ulang
+                                </label>
+                            </div>
+                            @error('status')
+                                <div class="text-danger mt-2">{{ $message }}</div>
+                            @enderror
                         </div>
                     </div>
 

@@ -60,9 +60,9 @@
                             href="{{ route('program.tahfidz') }}">Program Tahfidz</a></li>
 
                     <li><a class="nav-link scrollto {{ Route::currentRouteName() == 'publikasi' ? 'active' : '' }}"
-                            href={{route('publikasi')}}>Publikasi</a></li>
+                            href={{ route('publikasi') }}>Publikasi</a></li>
                     <li><a class="nav-link scrollto {{ Route::currentRouteName() == 'pengumuman.index' ? 'active' : '' }}"
-                            href="{{route('pengumuman.index')}}">Pengumuman</a></li>
+                            href="{{ route('pengumuman.index') }}">Pengumuman</a></li>
 
                 </ul>
             </div>
@@ -113,10 +113,12 @@
                             </x-dropdown>
                         </div>
                     @else
-                        <li><button data-bs-toggle="modal" data-bs-target="#modalRegister"
-                                class="register scrollto">Register</button></li>
-                        <li><a href={{route('login.store')}}><button class="login">Login</button></a>
-                        </li>
+                        <div class="flex items-center gap-3">
+                            <button data-bs-toggle="modal" class="bg-primary-app text-white py-2 px-4 rounded"
+                                data-bs-target="#modalRegister">Register</button>
+                            <a href={{ route('login.store') }}
+                                class="bg-white text-primay-app border-[1px] border-primary-app rounded py-2 px-4"><button>Login</button></a>
+                        </div>
                     @endif
                 </ul>
             </div>

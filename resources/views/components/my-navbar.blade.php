@@ -61,8 +61,8 @@
 
                     <li><a class="nav-link scrollto {{ Route::currentRouteName() == 'publikasi' ? 'active' : '' }}"
                             href={{route('publikasi')}}>Publikasi</a></li>
-                    <li><a class="nav-link scrollto {{ Route::currentRouteName() == 'pengumuman' ? 'active' : '' }}"
-                            href="#pengumuman">Pengumuman</a></li>
+                    <li><a class="nav-link scrollto {{ Route::currentRouteName() == 'pengumuman.index' ? 'active' : '' }}"
+                            href="{{route('pengumuman.index')}}">Pengumuman</a></li>
 
                 </ul>
             </div>

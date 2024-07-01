@@ -1,7 +1,6 @@
 <x-app-layout>
     <section id="dashboard" class="mt-5 pb-0">
         <div class="container">
-
             <p><a class="text-black" href="index.html">Beranda</a> / <a href="">Hafalan Saya</a></p>
 
             <div class="welcome mb-5">

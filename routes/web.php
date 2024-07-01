@@ -6,6 +6,7 @@ use App\Http\Controllers\Authentication\PengujiRegisterController;
 use App\Http\Controllers\Authentication\SantriRegisterController;
 use App\Http\Controllers\PanitiaDashboardController;
 use App\Http\Controllers\PengujiDashboardController;
+use App\Http\Controllers\PengumumanController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SantriController;
 use App\Http\Controllers\Setoran\SantriVerifiedSetoranController;
@@ -150,6 +151,9 @@ Route::get('/publikasi', function () {
 Route::get('/program-tahfidz', function () {
     return view('landing.tahfidz');
 })->name('program.tahfidz');
+
+Route::get('/pengumuman', [PengumumanController::class, 'index'])->name('pengumuman.index');
+Route::get('/pengumuman-kelulusan', [PengumumanController::class, 'indexKelulusan'])->name('pengumuman.kelulusan');
 
 
 Route::middleware('auth')->group(function () {

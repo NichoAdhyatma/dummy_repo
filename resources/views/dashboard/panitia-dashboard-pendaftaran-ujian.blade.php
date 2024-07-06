@@ -131,8 +131,19 @@
                                     @csrf
                                     @method('PUT')
                                     <div class="mt-8">
-                                        
+
                                         <div class="border shadow p-4 mt-2 flex flex-col gap-6">
+
+                                            <div>
+                                                KKM :
+                                                @if ($p->santri->jumlah_hafalan >= 5 && $p->santri->jumlah_hafalan <= 10)
+                                                    75
+                                                @elseif($p->santri->jumlah_hafalan >= 15 && $p->santri->jumlah_hafalan <= 20)
+                                                    70
+                                                @elseif($p->santri->jumlah_hafalan >= 25 && $p->santri->jumlah_hafalan <= 30)
+                                                    70
+                                                @endif
+                                            </div>
 
                                             <div class="flex gap-2 items-center">
                                                 <div class="font-semibold">
@@ -142,7 +153,7 @@
                                                     <div class="flex gap-1 items-center">
                                                         <input type="radio" name="panitia_done" value="1"
                                                             {{ $p->panitia_done == '1' ? 'checked' : '' }}>
-                                                        <div>Lulus Ujian</div>
+                                                        <div>Lulus</div>
                                                     </div>
                                                     <div class="flex gap-1 items-center">
                                                         <input type="radio" name="panitia_done" value="0"
